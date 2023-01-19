@@ -1,0 +1,31 @@
+{
+  "name": "@ctf/eth",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "compile": "buidler compile && buidler export-addresses",
+    "deploy": "buidler --network localhost deploy && buidler export-addresses --network localhost",
+    "clean": "rm -rf deployments/localhost build artifacts cache",
+    "evm": "buidler node --no-deploy",
+    "evm-with-gsn": "run-with-testrpc --networkId 1337 --chainId 1337 'gsn start' "
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.4.7",
+    "@nomiclabs/buidler-ethers": "^2.0.2",
+    "@nomiclabs/buidler-waffle": "^2.1.0",
+    "ethers": "^5.0.15",
+    "ganache-cli": "^6.11.0",
+    "run-with-testrpc": "^0.3.1"
+  },
+  "dependencies": {
+    "@opengsn/gsn": "^2.0.1",
+    "@portis/web3": "^2.0.0-beta.59",
+    "@toruslabs/torus-embed": "^1.8.6",
+    "@walletconnect/web3-provider": "^1.3.1",
+    "buidler-deploy": "^0.6.0-beta.16",
+    "eth-sig-util": "^2.5.3",
+    "fortmatic": "^2.2.1",
+    "web3modal": "^1.9.1"
+  }
+}
