@@ -1,0 +1,30 @@
+{
+  "name": "@ctf/mono",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Dror Tirosh <dror@opengsn.org>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn compile && yarn --cwd workspaces/react-app tsc && yarn react-start",
+    "build": "yarn compile && yarn react-build",
+    "start-prod": "yarn build && serve ./workspaces/react-app/build",
+    "react-start": "cd workspaces/react-app && yarn start",
+    "react-build": "cd workspaces/react-app && yarn build",
+    "compile": "cd workspaces/ctf-eth && yarn compile",
+    "deploy": "cd workspaces/ctf-eth && yarn deploy",
+    "evm": "npx hardhat node",
+    "gsn": "npx gsn start",
+    "clean": "cd workspaces/ctf-eth && yarn clean && cd ../react-app && yarn clean"
+  },
+  "workspaces": [
+    "workspaces/*"
+  ],
+  "dependencies": {
+    "patch-package": "^6.4.7",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "hardhat": "^2.4.3"
+  }
+}
